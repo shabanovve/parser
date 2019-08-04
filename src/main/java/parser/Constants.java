@@ -10,5 +10,5 @@ public class Constants {
     public static final int TIME_ZONE = 4;
     public static final String URL_TO_PARSE = "http://www.gidrometeorologiya.ruln.ru/page224.html";
 
-    public static final String FILE_NAME = "measurement.json";
+    public static final String FILE_NAME = "measurement.rss";
 }
