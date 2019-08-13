@@ -29,11 +29,11 @@ public class SubstanceProcessor implements Processor{
                 while (cellIterator.hasNext()) {
                     Observer observer = observerIterator.next();
                     String concentration = cellIterator.next().text();
-                    Substance substance = new Substance(
-                            substanceName,
-                            limitConcentration,
-                            concentration
-                    );
+                    Substance substance = Substance.builder()
+                            .name(substanceName)
+                            .limitConcentration(limitConcentration)
+                            .concentration(concentration)
+                            .build();
                     observer.getSubstances().add(substance);
                 }
             }

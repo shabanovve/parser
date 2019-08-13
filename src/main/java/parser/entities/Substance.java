@@ -1,15 +1,26 @@
 package parser.entities;
 
-import lombok.AccessLevel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.FieldDefaults;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "substance")
 @Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
-@FieldDefaults(makeFinal=true, level= AccessLevel.PRIVATE)
 public class Substance {
-    String name;
-    String limitConcentration;
-    String concentration;
+
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String limitConcentration;
+    private String concentration;
 }
